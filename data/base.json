@@ -6,6 +6,12 @@
     "muexit": "muexit.net",
     "fortmu": "fortmu.com"
   },
+  "exp_verificada": {
+    "nombre:infinitymuseason3": {
+      "opciones_exp": [9999999],
+      "fuente": "https://www.infinitymu.net/about-infinitymu/"
+    }
+  },
   "proyectos": [
     {
       "id": "muonline.webzen.com",
@@ -40,6 +46,24 @@
       "opciones_exp": [9999],
       "aperturas": [],
       "fuentes": ["topg"]
+    },
+    {
+      "id": "rebelmu.com",
+      "nombre": "RebelMU S21",
+      "tipo": "Privado",
+      "web": "https://www.muonlinetop100.com/server/rebelmu",
+      "opciones_exp": [999999],
+      "aperturas": [{"fecha": "2026-11-13", "exp": 999999, "fuentes": [], "temporadas_publicadas": ["Season 21"]}]
+    },
+    {
+      "id": "mu-ancient.com",
+      "nombre": "MU Ancient S6.3 · EXP dinámica",
+      "tipo": "Privado",
+      "web": null,
+      "opciones_exp": [99999999],
+      "fuente_exp": "https://www.mu-ancient.com/info",
+      "nota": "La ficha anuncia EXP dinámica que disminuye con los resets. También indica una EXP base de x9999999.",
+      "aperturas": []
     },
     {
       "id": "goblinmu.com",

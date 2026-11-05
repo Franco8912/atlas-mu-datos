@@ -24,6 +24,7 @@ SOURCES = {
 DETAIL_URLS = {
     "topg": re.compile(r"https://topg\.org/mu-private-servers/server-\d+/?"),
     "tuservermu": re.compile(r"https://top\.tuservermu\.com/server/[a-z0-9-]+"),
+    "muonlinetop100": re.compile(r"https://www\.muonlinetop100\.com/server/[a-z0-9-]+"),
 }
 DOMAIN = re.compile(r"(?i)^(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z]{2,}$")
 DAY = re.compile(r"(?<!\d)(\d{2})\.(\d{2})\.(20\d{2})(?!\d)")
@@ -245,7 +246,7 @@ def project_key(name, domains, aliases):
         return domains.get(domain, domain)
     return aliases.get(name_key(name), "nombre:" + name_key(name))
 
-def build_catalog(previous, snapshots, day):
+def build_catalog(previous, snapshots, day, verified_rates=None):
     projects = {item["id"]: item for item in previous["proyectos"]}
     domains = dict(previous.get("dominios", {}))
     aliases = dict(previous.get("alias", {}))
@@ -295,6 +296,10 @@ def build_catalog(previous, snapshots, day):
                     launch["temporadas_publicadas"] = sorted(seasons)
                 launch["fuentes"] = sorted(set(launch["fuentes"]) | {source})
     for item in projects.values():
+        rate_check = (verified_rates or {}).get(item["id"])
+        if rate_check:
+            item["opciones_exp"] = rate_check["opciones_exp"]
+            item["fuente_exp"] = rate_check["fuente"]
         if item["tipo"] == "Privado" and not any(
                 pattern.fullmatch(item.get("web") or "") for pattern in DETAIL_URLS.values()):
             item["web"] = next((SOURCES[source][1] for source in item.get("fuentes", [])
@@ -403,7 +408,7 @@ def run():
         raise SystemExit("Ninguna fuente respondió con datos válidos. Se conserva la lista publicada.")
     now = datetime.now(ARGENTINA)
     day = args.fecha or now.date().isoformat()
-    catalog, added = build_catalog(previous, snapshots, day)
+    catalog, added = build_catalog(previous, snapshots, day, base.get("exp_verificada"))
     catalog["actualizado"] = day
     catalog["fuentes_leidas"] = list(snapshots)
     args.salida.mkdir(parents=True, exist_ok=True)
