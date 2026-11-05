@@ -33,6 +33,15 @@
       "aperturas": []
     },
     {
+      "id": "brassmu.com",
+      "nombre": "BrassMU S22",
+      "tipo": "Privado",
+      "web": "https://topg.org/mu-private-servers/server-687440",
+      "opciones_exp": [9999],
+      "aperturas": [],
+      "fuentes": ["topg"]
+    },
+    {
       "id": "goblinmu.com",
       "nombre": "Goblin MU",
       "tipo": "Privado",

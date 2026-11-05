@@ -19,6 +19,11 @@ SOURCES = {
     "mu-online-list": ("MU Online List", "https://muonlinelist.com/"),
     "top-100": ("MU Online Top 100", "https://muonline-top100.com/"),
     "topg": ("TopG", "https://topg.org/mu-private-servers/new/"),
+    "tuservermu": ("TuServerMU", "https://top.tuservermu.com/servers?lang=es"),
+}
+DETAIL_URLS = {
+    "topg": re.compile(r"https://topg\.org/mu-private-servers/server-\d+/?"),
+    "tuservermu": re.compile(r"https://top\.tuservermu\.com/server/[a-z0-9-]+"),
 }
 DOMAIN = re.compile(r"(?i)^(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z]{2,}$")
 DAY = re.compile(r"(?<!\d)(\d{2})\.(\d{2})\.(20\d{2})(?!\d)")
@@ -59,6 +64,51 @@ class VisibleText(HTMLParser):
         return [" ".join(line.split()) for line in "".join(self.parts).splitlines()
                 if line.strip()]
 
+class TuServerCards(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.cards = []
+        self.next_page = None
+        self.in_card = False
+        self.in_rate = False
+        self.rate = ""
+        self.detail = None
+        self.title = ""
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        classes = (attrs.get("class") or "").split()
+        if tag == "div" and "gt-upcoming-streaming-wrapper" in classes:
+            self.in_card, self.in_rate = True, False
+            self.rate, self.title, self.detail = "", "", None
+        if tag == "i" and self.in_card and "fa-bolt" in classes:
+            self.in_rate = True
+        if tag != "a":
+            return
+        href = attrs.get("href") or ""
+        if attrs.get("rel") == "next" and re.fullmatch(
+                r"https://top\.tuservermu\.com/servers\?lang=es&page=[23]", href):
+            self.next_page = href
+        if self.in_card and DETAIL_URLS["tuservermu"].fullmatch(href):
+            self.detail = href
+
+    def handle_data(self, data):
+        if self.in_rate:
+            self.rate += data
+        if self.detail:
+            self.title += data
+
+    def handle_endtag(self, tag):
+        if tag == "li":
+            self.in_rate = False
+        if tag == "a" and self.detail:
+            name = " ".join(self.title.split())
+            rate = re.fullmatch(r"(?i)x?\s*(\d+)", self.rate.strip())
+            if name:
+                self.cards.append((name, f"x{rate[1]}" if rate else "", "", self.detail))
+            self.in_card = False
+            self.detail = None
+
 def read_url(url, limit=2_000_000):
     with urlopen(Request(url, headers={"User-Agent": USER_AGENT}), timeout=20) as response:
         payload = response.read(limit + 1)
@@ -78,26 +128,32 @@ def robots_for(url):
         rules.parse([])
     return rules
 
-def source_page(url, rules):
+def source_page(url, rules, parser=VisibleText):
     if not rules.can_fetch(USER_AGENT, url):
         raise ValueError("robots.txt limita la lectura automática")
-    page = VisibleText()
+    page = parser()
     page.feed(read_url(url))
     return page
 
 def topg_pages(url, rules):
-    index = source_page(url, rules)
-    links = dict.fromkeys(urljoin(url, href) for href in index.links)
-    details = [link for link in links if re.fullmatch(
-        r"https://topg\.org/mu-private-servers/server-\d+/?", link)]
-    for detail in details[:8]:
+    details = {}
+    for index_url, limit in ((url, 8), ("https://topg.org/mu-private-servers/", 12)):
         try:
-            yield source_page(detail, rules).lines()
+            index = source_page(index_url, rules)
+        except (OSError, ValueError) as error:
+            print(f"TopG ({index_url}): {error}")
+            continue
+        links = dict.fromkeys(urljoin(index_url, href) for href in index.links)
+        matches = [link.rstrip("/") for link in links if DETAIL_URLS["topg"].fullmatch(link)]
+        details.update(dict.fromkeys(matches[:limit]))
+    for detail in details:
+        try:
+            yield detail, source_page(detail, rules).lines()
         except (OSError, ValueError) as error:
             print(f"TopG ({detail}): {error}")
 
 def extract_topg(pages):
-    for lines in pages:
+    for detail, lines in pages:
         for position, line in enumerate(lines):
             if not re.match(r"(?i)^(website|sitio web)\b", line):
                 continue
@@ -109,15 +165,27 @@ def extract_topg(pages):
             start = next((i for i, value in enumerate(tail)
                           if re.match(r"(?i)^(type|tipo)\b", value)), None)
             if start is None:
-                yield domain, "", ""
+                yield domain, "", "", detail
                 break
             tags = []
             for tag in tail[start:start + 12]:
                 if re.match(r"(?i)^(location|ubicación|share|rank)\b", tag):
                     break
                 tags.append(tag)
-            yield domain, " ".join(tags), ""
+            yield domain, " ".join(tags), "", detail
             break
+
+def tuservermu_pages(url, rules):
+    seen = set()
+    while url and url not in seen:
+        seen.add(url)
+        try:
+            page = source_page(url, rules, TuServerCards)
+        except (OSError, ValueError) as error:
+            print(f"TuServerMU ({url}): {error}")
+            return
+        yield from page.cards
+        url = page.next_page
 
 def day_from(text):
     match = DAY.search(text)
@@ -147,7 +215,7 @@ def extract_list(lines):
             details = " ".join(lines[position - width:position])
             name = lines[position - width - 1]
             if re.match(r"(?i)^x\d+", details) and SEASON.search(details) and not DAY.search(name):
-                yield name, details, line
+                yield name, details, line, None
                 break
 
 def extract_top100(lines):
@@ -166,7 +234,7 @@ def extract_top100(lines):
         details = " ".join(lines[position + detail_offset:position + detail_offset + 2])
         summary = re.match(r"(?i)^x\d+(?:\s+season\s+\d+(?:\.\d+)?)?", details)
         if DOMAIN.fullmatch(name) and summary:
-            yield name, summary.group(), words[0]
+            yield name, summary.group(), words[0], None
 
 def name_key(name):
     return re.sub(r"[^a-z0-9]", "", name.casefold())
@@ -183,20 +251,35 @@ def build_catalog(previous, snapshots, day):
     aliases = dict(previous.get("alias", {}))
     before = set(projects)
     for source, lines in snapshots.items():
-        for name, details, date_text in PARSERS[source](lines):
+        named_projects = {}
+        if source == "tuservermu":
+            for item in projects.values():
+                if item["tipo"] != "Privado":
+                    continue
+                names = {name_key(item["nombre"])}
+                if DOMAIN.fullmatch(item["id"]):
+                    names.add(name_key(item["id"].split(".")[0]))
+                for name in names:
+                    named_projects.setdefault(name, set()).add(item["id"])
+        for name, details, date_text, detail in PARSERS[source](lines):
             opening = day_from(date_text)
             rates = sorted({int(first or second) for first, second in RATE.findall(details)})
             season_match = SEASON.search(details)
             key = project_key(name, domains, aliases)
-            if key == "nombre:" or (source != "topg" and (not opening or not rates)):
+            matches = named_projects.get(name_key(name), set())
+            if source == "tuservermu" and key.startswith("nombre:") and len(matches) == 1:
+                key = next(iter(matches))
+            if key == "nombre:" or (source in {"mu-online-list", "top-100"} and (not opening or not rates)):
                 continue
             if key not in projects:
                 projects[key] = {"id": key, "nombre": name, "tipo": "Privado",
-                                 "web": f"https://{key}/" if DOMAIN.fullmatch(key) else None,
+                                 "web": None,
                                  "opciones_exp": [], "aperturas": []}
             project = projects[key]
             project["opciones_exp"] = sorted(set(project["opciones_exp"]) | set(rates))
             project["fuentes"] = sorted(set(project.get("fuentes", [])) | {source})
+            if project["tipo"] == "Privado" and detail and DETAIL_URLS[source].fullmatch(detail):
+                project["web"] = detail
             if not opening:
                 continue
             for rate in rates:
@@ -212,6 +295,10 @@ def build_catalog(previous, snapshots, day):
                     launch["temporadas_publicadas"] = sorted(seasons)
                 launch["fuentes"] = sorted(set(launch["fuentes"]) | {source})
     for item in projects.values():
+        if item["tipo"] == "Privado" and not any(
+                pattern.fullmatch(item.get("web") or "") for pattern in DETAIL_URLS.values()):
+            item["web"] = next((SOURCES[source][1] for source in item.get("fuentes", [])
+                                if source in SOURCES), None)
         for launch in item["aperturas"]:
             if launch.get("confirmada") is not True:
                 launch["estado"] = "Anunciada" if launch["fecha"] >= day else "Fecha publicada pasada"
@@ -222,14 +309,16 @@ def build_catalog(previous, snapshots, day):
                          for key, value in SOURCES.items()}
     return result, sorted(set(projects) - before)
 
-PARSERS = {"mu-online-list": extract_list, "top-100": extract_top100, "topg": extract_topg}
+PARSERS = {"mu-online-list": extract_list, "top-100": extract_top100, "topg": extract_topg,
+           "tuservermu": iter}
 
 def make_index(catalog):
     rows = []
     for item in catalog["proyectos"]:
         title = html.escape(item["nombre"])
         rates = " · ".join(f"x{n}" for n in item["opciones_exp"])
-        web = item.get("web") or catalog["fuentes"][item["aperturas"][0]["fuentes"][0]]["url"]
+        web = item.get("web")
+        link = f'<p><a href="{html.escape(web, quote=True)}">Ver ficha</a></p>' if web else ""
         details = []
         if item.get("nota"):
             details.append(f"<p>{html.escape(item['nota'])}</p>")
@@ -240,12 +329,12 @@ def make_index(catalog):
             season = f" · {html.escape(' / '.join(seasons))}" if seasons else ""
             details.append(f"<li>{label}{season}{exp} · {html.escape(launch['estado'])}</li>")
         if not details:
-            details.append("<p>Consultá la página del proyecto para más datos.</p>")
+            details.append("<p>Sin fecha de apertura registrada.</p>")
         rows.append(f'<details><summary><strong>{title}</strong> · {html.escape(item["tipo"])}'
                     f'{(" · " + rates) if rates else ""}</summary>'
                     f'<ul>{"".join(value for value in details if value.startswith("<li>"))}</ul>'
                     f'{"".join(value for value in details if value.startswith("<p>"))}'
-                    f'<p><a href="{html.escape(web, quote=True)}">Ver página</a></p></details>')
+                    f'{link}</details>')
     stamp = html.escape(catalog["actualizado"])
     return f"""<!doctype html>
 <html lang="es-AR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -270,12 +359,15 @@ def run():
     parser.add_argument("--muestras", type=Path, help="carpeta local con los textos de la prueba")
     parser.add_argument("--fecha", help="fecha de corte AAAA-MM-DD para una prueba reproducible")
     args = parser.parse_args()
-    previous = json.loads((HERE / "data" / "base.json").read_text(encoding="utf-8"))
+    base = json.loads((HERE / "data" / "base.json").read_text(encoding="utf-8"))
+    previous = base
     if args.anterior_url:
         try:
             previous = json.loads(read_url(args.anterior_url))
             if previous.get("version") != 1 or not isinstance(previous.get("proyectos"), list):
                 raise ValueError("formato inválido de la lista anterior")
+            existing = {item["id"] for item in previous["proyectos"]}
+            previous["proyectos"].extend(item for item in base["proyectos"] if item["id"] not in existing)
         except HTTPError as error:
             if error.code != 404:
                 raise
@@ -284,14 +376,24 @@ def run():
         try:
             if args.muestras:
                 if key == "topg":
-                    records = [path.read_text(encoding="utf-8").splitlines()
+                    records = [(None, path.read_text(encoding="utf-8").splitlines())
                                for path in sorted(args.muestras.glob("topg-*.txt"))]
+                elif key == "tuservermu":
+                    records = []
+                    for path in sorted(args.muestras.glob("tuservermu*.html")):
+                        page = TuServerCards()
+                        page.feed(path.read_text(encoding="utf-8"))
+                        records.extend(page.cards)
                 else:
                     records = (args.muestras / (key + ".txt")).read_text(encoding="utf-8").splitlines()
             else:
                 rules = robots_for(url)
-                records = (list(topg_pages(url, rules)) if key == "topg"
-                           else source_page(url, rules).lines())
+                if key == "topg":
+                    records = list(topg_pages(url, rules))
+                elif key == "tuservermu":
+                    records = list(tuservermu_pages(url, rules))
+                else:
+                    records = source_page(url, rules).lines()
             if not list(PARSERS[key](records)):
                 raise ValueError("no se reconocieron fichas")
             snapshots[key] = records
