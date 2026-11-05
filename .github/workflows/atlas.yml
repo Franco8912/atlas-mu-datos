@@ -2,6 +2,12 @@ name: Actualizar Atlas MU
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/atlas.yml'
+      - 'actualizar.py'
+      - 'data/base.json'
   schedule:
     - cron: '17 13 * * *'
 
