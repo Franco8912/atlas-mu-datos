@@ -1,0 +1,37 @@
+name: Actualizar Atlas MU
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 13 * * *'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: atlas-mu-pages
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+      - name: Configurar GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Actualizar listado
+        env:
+          BASE_URL: ${{ steps.pages.outputs.base_url }}
+        run: python3 actualizar.py --anterior-url "${BASE_URL%/}/servidores.json"
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: public
+      - uses: actions/deploy-pages@v4
+        id: deploy

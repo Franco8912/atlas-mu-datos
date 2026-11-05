@@ -1,0 +1,1853 @@
+{
+  "version": 1,
+  "dominios": {
+    "rushmu.bg": "hard.rushmu.bg"
+  },
+  "alias": {
+    "goblinmu": "goblinmu.com",
+    "muexit": "muexit.net",
+    "fortmu": "fortmu.com"
+  },
+  "proyectos": [
+    {
+      "id": "acheronworld.online",
+      "nombre": "ACHERONWORLD.ONLINE",
+      "tipo": "Privado",
+      "web": "https://acheronworld.online/",
+      "opciones_exp": [
+        10
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-11-18",
+          "exp": 10,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Anunciada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "amgmu.com",
+      "nombre": "amgmu.com",
+      "tipo": "Privado",
+      "web": "https://amgmu.com/",
+      "opciones_exp": [
+        1000
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-11-02",
+          "exp": 1000,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "awakemu.com",
+      "nombre": "AWAKEMU.COM",
+      "tipo": "Privado",
+      "web": "https://awakemu.com/",
+      "opciones_exp": [
+        500
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-31",
+          "exp": 500,
+          "fuentes": [
+            "mu-online-list",
+            "top-100"
+          ],
+          "temporadas_publicadas": [
+            "Season 18"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list",
+        "top-100"
+      ]
+    },
+    {
+      "id": "bloodlustmu.com",
+      "nombre": "bloodlustmu.com",
+      "tipo": "Privado",
+      "web": "https://bloodlustmu.com/",
+      "opciones_exp": [
+        20
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-31",
+          "exp": 20,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "damnedland.ro",
+      "nombre": "damnedland.ro",
+      "tipo": "Privado",
+      "web": "https://damnedland.ro/",
+      "opciones_exp": [
+        200
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-11-21",
+          "exp": 200,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Anunciada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "dartmu.com",
+      "nombre": "dartmu.com",
+      "tipo": "Privado",
+      "web": "https://dartmu.com/",
+      "opciones_exp": [
+        100
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-11-10",
+          "exp": 100,
+          "fuentes": [
+            "top-100"
+          ],
+          "temporadas_publicadas": [
+            "Season 18"
+          ],
+          "estado": "Anunciada"
+        }
+      ],
+      "fuentes": [
+        "top-100"
+      ]
+    },
+    {
+      "id": "demonicmu.com",
+      "nombre": "DEMONICMU.COM",
+      "tipo": "Privado",
+      "web": "https://demonicmu.com/",
+      "opciones_exp": [
+        500
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-12-04",
+          "exp": 500,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Anunciada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "deviasnight.online",
+      "nombre": "DEVIASNIGHT.ONLINE",
+      "tipo": "Privado",
+      "web": "https://deviasnight.online/",
+      "opciones_exp": [
+        25
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-31",
+          "exp": 25,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 22"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "nombre:devilmu",
+      "nombre": "Devil-Mu",
+      "tipo": "Privado",
+      "web": null,
+      "opciones_exp": [
+        1000
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-28",
+          "exp": 1000,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "devoredmu.online",
+      "nombre": "DEVOREDMU.ONLINE",
+      "tipo": "Privado",
+      "web": "https://devoredmu.online/",
+      "opciones_exp": [
+        250
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-31",
+          "exp": 250,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 22"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "diamondmu.com",
+      "nombre": "DIAMONDMU.COM",
+      "tipo": "Privado",
+      "web": "https://diamondmu.com/",
+      "opciones_exp": [
+        50
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-11-17",
+          "exp": 50,
+          "fuentes": [
+            "mu-online-list",
+            "top-100"
+          ],
+          "temporadas_publicadas": [
+            "Season 21",
+            "Season 22"
+          ],
+          "estado": "Anunciada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list",
+        "top-100"
+      ]
+    },
+    {
+      "id": "nombre:dmgmu",
+      "nombre": "DMG-MU",
+      "tipo": "Privado",
+      "web": null,
+      "opciones_exp": [
+        500
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-12-26",
+          "exp": 500,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Anunciada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "nombre:dracarys",
+      "nombre": "DRACARYS",
+      "tipo": "Privado",
+      "web": null,
+      "opciones_exp": [
+        500
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-28",
+          "exp": 500,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "dragonmu.net",
+      "nombre": "dragonmu.net",
+      "tipo": "Privado",
+      "web": "https://dragonmu.net/",
+      "opciones_exp": [
+        500
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-26",
+          "exp": 500,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 22"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "elyndormu.com",
+      "nombre": "elyndormu.com",
+      "tipo": "Privado",
+      "web": "https://elyndormu.com/",
+      "opciones_exp": [
+        2000
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-11-07",
+          "exp": 2000,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 21"
+          ],
+          "estado": "Anunciada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list",
+        "topg"
+      ]
+    },
+    {
+      "id": "nombre:epicmu",
+      "nombre": "epicMu",
+      "tipo": "Privado",
+      "web": null,
+      "opciones_exp": [
+        50
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-23",
+          "exp": 50,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "nombre:espadax100",
+      "nombre": "Espada x100",
+      "tipo": "Privado",
+      "web": null,
+      "opciones_exp": [
+        100
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-11-30",
+          "exp": 100,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Anunciada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "eterealmu.com",
+      "nombre": "eterealmu.com",
+      "tipo": "Privado",
+      "web": "https://eterealmu.com/",
+      "opciones_exp": [
+        10
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-30",
+          "exp": 10,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "eternalmu.online",
+      "nombre": "ETERNALMU.ONLINE",
+      "tipo": "Privado",
+      "web": "https://eternalmu.online/",
+      "opciones_exp": [
+        50
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-11-19",
+          "exp": 50,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Anunciada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "nombre:fatemu",
+      "nombre": "FateMU",
+      "tipo": "Privado",
+      "web": null,
+      "opciones_exp": [
+        9999
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-31",
+          "exp": 9999,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "flamemu.com",
+      "nombre": "flamemu.com",
+      "tipo": "Privado",
+      "web": "https://flamemu.com/",
+      "opciones_exp": [
+        600
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-20",
+          "exp": 600,
+          "fuentes": [
+            "top-100"
+          ],
+          "temporadas_publicadas": [
+            "Season 21"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "top-100"
+      ]
+    },
+    {
+      "id": "fortmu.com",
+      "nombre": "FORTMU.COM",
+      "tipo": "Privado",
+      "web": "https://fortmu.com/",
+      "opciones_exp": [
+        5
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-11-13",
+          "exp": 5,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Anunciada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "nombre:frostbanemu",
+      "nombre": "frostbanemu",
+      "tipo": "Privado",
+      "web": null,
+      "opciones_exp": [
+        333
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-11-13",
+          "exp": 333,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Anunciada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "globalmuonline.com",
+      "nombre": "GlobalMuOnline S21",
+      "tipo": "Privado",
+      "web": "https://globalmuonline.com/",
+      "opciones_exp": [
+        25,
+        1000,
+        5000,
+        9999
+      ],
+      "aperturas": [],
+      "fuentes": [
+        "topg"
+      ]
+    },
+    {
+      "id": "goblinmu.com",
+      "nombre": "Goblin MU",
+      "tipo": "Privado",
+      "web": "https://www.goblinmu.com/",
+      "opciones_exp": [
+        100,
+        700
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-17",
+          "exp": 700,
+          "fuentes": [
+            "top-100"
+          ],
+          "temporadas_publicadas": [
+            "Season 9"
+          ],
+          "estado": "Fecha publicada pasada"
+        },
+        {
+          "fecha": "2026-11-09",
+          "exp": 100,
+          "fuentes": [
+            "mu-online-list",
+            "top-100"
+          ],
+          "temporadas_publicadas": [
+            "Season 9"
+          ],
+          "estado": "Anunciada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list",
+        "top-100"
+      ]
+    },
+    {
+      "id": "imperialmu.net",
+      "nombre": "imperialmu.net",
+      "tipo": "Privado",
+      "web": "https://imperialmu.net/",
+      "opciones_exp": [
+        400
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-11-03",
+          "exp": 400,
+          "fuentes": [
+            "mu-online-list",
+            "top-100"
+          ],
+          "temporadas_publicadas": [
+            "Season 21"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list",
+        "top-100"
+      ]
+    },
+    {
+      "id": "kantru.com",
+      "nombre": "kantru.com",
+      "tipo": "Privado",
+      "web": "https://kantru.com/",
+      "opciones_exp": [
+        100
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-11-01",
+          "exp": 100,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "nombre:lucernamu",
+      "nombre": "LUCERNAMU",
+      "tipo": "Privado",
+      "web": null,
+      "opciones_exp": [
+        9999
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-24",
+          "exp": 9999,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "nombre:luminousmu",
+      "nombre": "Luminous MU",
+      "tipo": "Privado",
+      "web": null,
+      "opciones_exp": [
+        800
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-27",
+          "exp": 800,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 17"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "luminousmu.com",
+      "nombre": "luminousmu.com",
+      "tipo": "Privado",
+      "web": "https://luminousmu.com/",
+      "opciones_exp": [
+        800
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-27",
+          "exp": 800,
+          "fuentes": [
+            "top-100"
+          ],
+          "temporadas_publicadas": [
+            "Season 17"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "top-100"
+      ]
+    },
+    {
+      "id": "magnificmu.com",
+      "nombre": "MAGNIFICMU.COM",
+      "tipo": "Privado",
+      "web": "https://magnificmu.com/",
+      "opciones_exp": [
+        250
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-29",
+          "exp": 250,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 18"
+          ],
+          "estado": "Fecha publicada pasada"
+        },
+        {
+          "fecha": "2026-11-02",
+          "exp": 250,
+          "fuentes": [
+            "top-100"
+          ],
+          "temporadas_publicadas": [
+            "Season 18"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list",
+        "top-100"
+      ]
+    },
+    {
+      "id": "nombre:miraclemu",
+      "nombre": "MIRACLE-MU",
+      "tipo": "Privado",
+      "web": null,
+      "opciones_exp": [
+        9999
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-22",
+          "exp": 9999,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 2"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "nombre:mubeyond",
+      "nombre": "MU Beyond",
+      "tipo": "Privado",
+      "web": null,
+      "opciones_exp": [
+        100
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-11-15",
+          "exp": 100,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 21"
+          ],
+          "estado": "Anunciada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "muexit.net",
+      "nombre": "MU EXIT",
+      "tipo": "Privado",
+      "web": "https://muexit.net/",
+      "opciones_exp": [
+        100
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-11-15",
+          "exp": 100,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Anunciada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "nombre:mufavorite",
+      "nombre": "MU FAVORITE",
+      "tipo": "Privado",
+      "web": null,
+      "opciones_exp": [
+        10
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-11-01",
+          "exp": 10,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "mu-maxage.com",
+      "nombre": "MU MAX Age",
+      "tipo": "Oficial",
+      "web": "https://mu-maxage.com/en/news",
+      "nota": "Novedades y anuncios del editor.",
+      "opciones_exp": [],
+      "aperturas": []
+    },
+    {
+      "id": "muonline.webzen.com",
+      "nombre": "MU Online",
+      "tipo": "Oficial",
+      "web": "https://muonline.webzen.com/en/news/notices",
+      "opciones_exp": [],
+      "aperturas": []
+    },
+    {
+      "id": "mu-familia.com",
+      "nombre": "MU-FAMILIA.COM",
+      "tipo": "Privado",
+      "web": "https://mu-familia.com/",
+      "opciones_exp": [
+        100
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-31",
+          "exp": 100,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 22"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "mu-fresh.com",
+      "nombre": "mu-fresh.com",
+      "tipo": "Privado",
+      "web": "https://mu-fresh.com/",
+      "opciones_exp": [
+        100
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-23",
+          "exp": 100,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "nombre:mumia",
+      "nombre": "Mu-Mia",
+      "tipo": "Privado",
+      "web": null,
+      "opciones_exp": [
+        1500
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-23",
+          "exp": 1500,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 3"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "mu-online.by",
+      "nombre": "mu-online.by",
+      "tipo": "Privado",
+      "web": "https://mu-online.by/",
+      "opciones_exp": [
+        30
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-30",
+          "exp": 30,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 3"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "mu-online.org",
+      "nombre": "mu-online.org",
+      "tipo": "Privado",
+      "web": "https://mu-online.org/",
+      "opciones_exp": [
+        5000
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-30",
+          "exp": 5000,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 22"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "mu-origins.com",
+      "nombre": "MU-ORIGINS.COM",
+      "tipo": "Privado",
+      "web": "https://mu-origins.com/",
+      "opciones_exp": [
+        1000
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-11-20",
+          "exp": 1000,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 4"
+          ],
+          "estado": "Anunciada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "nombre:mutitan",
+      "nombre": "Mu-Titan",
+      "tipo": "Privado",
+      "web": null,
+      "opciones_exp": [
+        150
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-11-07",
+          "exp": 150,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 3"
+          ],
+          "estado": "Anunciada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "mu2death.com",
+      "nombre": "MU2DEATH.COM",
+      "tipo": "Privado",
+      "web": "https://mu2death.com/",
+      "opciones_exp": [
+        1000
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-25",
+          "exp": 1000,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "mudevuong.live",
+      "nombre": "mudevuong.live",
+      "tipo": "Privado",
+      "web": "https://mudevuong.live/",
+      "opciones_exp": [
+        10
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-28",
+          "exp": 10,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 2"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "mueleon.com",
+      "nombre": "MUELEON.COM",
+      "tipo": "Privado",
+      "web": "https://mueleon.com/",
+      "opciones_exp": [
+        100
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-31",
+          "exp": 100,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "nombre:mumoldova",
+      "nombre": "MuMoldova",
+      "tipo": "Privado",
+      "web": null,
+      "opciones_exp": [
+        25
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-12-01",
+          "exp": 25,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Anunciada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "muo2.com",
+      "nombre": "MUO2.COM",
+      "tipo": "Privado",
+      "web": "https://muo2.com/",
+      "opciones_exp": [
+        100
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-30",
+          "exp": 100,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "muonline.academy",
+      "nombre": "muonline.academy",
+      "tipo": "Privado",
+      "web": "https://muonline.academy/",
+      "opciones_exp": [
+        50
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-11-01",
+          "exp": 50,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 4"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "muonlineplay.com",
+      "nombre": "muonlineplay.com",
+      "tipo": "Privado",
+      "web": "https://muonlineplay.com/",
+      "opciones_exp": [
+        5,
+        200
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-15",
+          "exp": 200,
+          "fuentes": [
+            "top-100"
+          ],
+          "temporadas_publicadas": [
+            "Season 15"
+          ],
+          "estado": "Fecha publicada pasada"
+        },
+        {
+          "fecha": "2026-11-07",
+          "exp": 5,
+          "fuentes": [
+            "top-100"
+          ],
+          "temporadas_publicadas": [
+            "Season 15"
+          ],
+          "estado": "Anunciada"
+        }
+      ],
+      "fuentes": [
+        "top-100"
+      ]
+    },
+    {
+      "id": "mureforge.com",
+      "nombre": "mureforge.com",
+      "tipo": "Privado",
+      "web": "https://mureforge.com/",
+      "opciones_exp": [
+        1200
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-22",
+          "exp": 1200,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "nombre:muruss",
+      "nombre": "MuRuss",
+      "tipo": "Privado",
+      "web": null,
+      "opciones_exp": [
+        100
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-30",
+          "exp": 100,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 3"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "mutnf.com",
+      "nombre": "mutnf.com",
+      "tipo": "Privado",
+      "web": "https://mutnf.com/",
+      "opciones_exp": [
+        50
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-23",
+          "exp": 50,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "nombre:muxlegendb",
+      "nombre": "muxlegend [B]",
+      "tipo": "Privado",
+      "web": null,
+      "opciones_exp": [
+        75
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-23",
+          "exp": 75,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 21"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "openmu.ru",
+      "nombre": "OPENMU.RU",
+      "tipo": "Privado",
+      "web": "https://openmu.ru/",
+      "opciones_exp": [
+        100
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-11-29",
+          "exp": 100,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Anunciada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "orion-mu.com",
+      "nombre": "orion-mu.com",
+      "tipo": "Privado",
+      "web": "https://orion-mu.com/",
+      "opciones_exp": [
+        600
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-30",
+          "exp": 600,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 21"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "nombre:pantheonmu",
+      "nombre": "PantheonMU",
+      "tipo": "Privado",
+      "web": null,
+      "opciones_exp": [
+        200
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-24",
+          "exp": 200,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "partymu.net",
+      "nombre": "PartyMU.NET",
+      "tipo": "Privado",
+      "web": "https://partymu.net/",
+      "opciones_exp": [
+        50,
+        500
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-24",
+          "exp": 500,
+          "fuentes": [
+            "mu-online-list",
+            "top-100"
+          ],
+          "temporadas_publicadas": [
+            "Season 18"
+          ],
+          "estado": "Fecha publicada pasada"
+        },
+        {
+          "fecha": "2026-11-14",
+          "exp": 50,
+          "fuentes": [
+            "top-100"
+          ],
+          "temporadas_publicadas": [
+            "Season 18"
+          ],
+          "estado": "Anunciada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list",
+        "top-100"
+      ]
+    },
+    {
+      "id": "nombre:rebornmu",
+      "nombre": "REBORN-MU",
+      "tipo": "Privado",
+      "web": null,
+      "opciones_exp": [
+        1000
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-11-01",
+          "exp": 1000,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 5"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "ru.dayronmu.com",
+      "nombre": "ru.dayronmu.com",
+      "tipo": "Privado",
+      "web": "https://ru.dayronmu.com/",
+      "opciones_exp": [
+        200
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-11-01",
+          "exp": 200,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "hard.rushmu.bg",
+      "nombre": "RushMU Hard",
+      "tipo": "Privado",
+      "web": "https://hard.rushmu.bg/",
+      "opciones_exp": [
+        80,
+        90,
+        100
+      ],
+      "aperturas": [],
+      "fuentes": [
+        "topg"
+      ]
+    },
+    {
+      "id": "nombre:skadymu",
+      "nombre": "SkadyMu",
+      "tipo": "Privado",
+      "web": null,
+      "opciones_exp": [
+        100
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-23",
+          "exp": 100,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 21"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "starredmu.com",
+      "nombre": "starredmu.com",
+      "tipo": "Privado",
+      "web": "https://starredmu.com/",
+      "opciones_exp": [
+        500
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-11-05",
+          "exp": 500,
+          "fuentes": [
+            "top-100"
+          ],
+          "temporadas_publicadas": [
+            "Season 12"
+          ],
+          "estado": "Anunciada"
+        }
+      ],
+      "fuentes": [
+        "top-100"
+      ]
+    },
+    {
+      "id": "sunrisemu.com",
+      "nombre": "SUNRISEMU.COM",
+      "tipo": "Privado",
+      "web": "https://sunrisemu.com/",
+      "opciones_exp": [
+        30
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-12-04",
+          "exp": 30,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 4"
+          ],
+          "estado": "Anunciada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "thundermu.com",
+      "nombre": "THUNDERMU.COM",
+      "tipo": "Privado",
+      "web": "https://thundermu.com/",
+      "opciones_exp": [
+        50
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-30",
+          "exp": 50,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "nombre:topmuonline",
+      "nombre": "Top Mu Online",
+      "tipo": "Privado",
+      "web": null,
+      "opciones_exp": [
+        80
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-22",
+          "exp": 80,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 18"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "topmuonline.net",
+      "nombre": "topmuonline.net",
+      "tipo": "Privado",
+      "web": "https://topmuonline.net/",
+      "opciones_exp": [
+        80,
+        1000
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-22",
+          "exp": 80,
+          "fuentes": [
+            "top-100"
+          ],
+          "temporadas_publicadas": [
+            "Season 18"
+          ],
+          "estado": "Fecha publicada pasada"
+        },
+        {
+          "fecha": "2026-11-12",
+          "exp": 1000,
+          "fuentes": [
+            "top-100"
+          ],
+          "temporadas_publicadas": [
+            "Season 18"
+          ],
+          "estado": "Anunciada"
+        }
+      ],
+      "fuentes": [
+        "top-100"
+      ]
+    },
+    {
+      "id": "vexmu.online",
+      "nombre": "vexmu.online",
+      "tipo": "Privado",
+      "web": "https://vexmu.online/",
+      "opciones_exp": [
+        500
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-25",
+          "exp": 500,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "nombre:x95solo",
+      "nombre": "X95 SOLO",
+      "tipo": "Privado",
+      "web": null,
+      "opciones_exp": [
+        100
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-11-13",
+          "exp": 100,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Anunciada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    },
+    {
+      "id": "zenaria.ru",
+      "nombre": "zenaria.ru",
+      "tipo": "Privado",
+      "web": "https://zenaria.ru/",
+      "opciones_exp": [
+        40
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-10-16",
+          "exp": 40,
+          "fuentes": [
+            "top-100"
+          ],
+          "temporadas_publicadas": [
+            "Season 6"
+          ],
+          "estado": "Fecha publicada pasada"
+        }
+      ],
+      "fuentes": [
+        "top-100"
+      ]
+    },
+    {
+      "id": "zorynthmu.online",
+      "nombre": "ZORYNTHMU.ONLINE",
+      "tipo": "Privado",
+      "web": "https://zorynthmu.online/",
+      "opciones_exp": [
+        500
+      ],
+      "aperturas": [
+        {
+          "fecha": "2026-11-18",
+          "exp": 500,
+          "fuentes": [
+            "mu-online-list"
+          ],
+          "temporadas_publicadas": [
+            "Season 22"
+          ],
+          "estado": "Anunciada"
+        }
+      ],
+      "fuentes": [
+        "mu-online-list"
+      ]
+    }
+  ],
+  "fuentes": {
+    "mu-online-list": {
+      "nombre": "MU Online List",
+      "url": "https://muonlinelist.com/"
+    },
+    "top-100": {
+      "nombre": "MU Online Top 100",
+      "url": "https://muonline-top100.com/"
+    },
+    "topg": {
+      "nombre": "TopG",
+      "url": "https://topg.org/mu-private-servers/new/"
+    }
+  },
+  "actualizado": "2026-11-04",
+  "fuentes_leidas": [
+    "mu-online-list",
+    "top-100",
+    "topg"
+  ]
+}

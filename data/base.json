@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "dominios": {"rushmu.bg": "hard.rushmu.bg"},
+  "alias": {
+    "goblinmu": "goblinmu.com",
+    "muexit": "muexit.net",
+    "fortmu": "fortmu.com"
+  },
+  "proyectos": [
+    {
+      "id": "muonline.webzen.com",
+      "nombre": "MU Online",
+      "tipo": "Oficial",
+      "web": "https://muonline.webzen.com/en/news/notices",
+      "opciones_exp": [],
+      "aperturas": []
+    },
+    {
+      "id": "mu-maxage.com",
+      "nombre": "MU MAX Age",
+      "tipo": "Oficial",
+      "web": "https://mu-maxage.com/en/news",
+      "nota": "Novedades y anuncios del editor.",
+      "opciones_exp": [],
+      "aperturas": []
+    },
+    {
+      "id": "globalmuonline.com",
+      "nombre": "GlobalMuOnline S21",
+      "tipo": "Privado",
+      "web": "https://globalmuonline.com/",
+      "opciones_exp": [25, 1000, 5000, 9999],
+      "aperturas": []
+    },
+    {
+      "id": "goblinmu.com",
+      "nombre": "Goblin MU",
+      "tipo": "Privado",
+      "web": "https://www.goblinmu.com/",
+      "opciones_exp": [100, 700],
+      "aperturas": []
+    },
+    {
+      "id": "hard.rushmu.bg",
+      "nombre": "RushMU Hard",
+      "tipo": "Privado",
+      "web": "https://hard.rushmu.bg/",
+      "opciones_exp": [100],
+      "aperturas": []
+    }
+  ]
+}
