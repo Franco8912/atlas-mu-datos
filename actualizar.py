@@ -65,6 +65,87 @@ class VisibleText(HTMLParser):
         return [" ".join(line.split()) for line in "".join(self.parts).splitlines()
                 if line.strip()]
 
+class TopGRanking(VisibleText):
+    def __init__(self):
+        super().__init__()
+        self.ranked_tags = {}
+        self.ranked_domains = {}
+        self.row_tags = None
+        self.detail = None
+        self.label = None
+        self.structured = None
+
+    def handle_starttag(self, tag, attrs):
+        super().handle_starttag(tag, attrs)
+        attrs = dict(attrs)
+        classes = (attrs.get("class") or "").split()
+        if tag == "script" and attrs.get("type") == "application/ld+json":
+            self.structured = []
+        if tag == "li" and "topg-server" in classes:
+            self.row_tags, self.detail = [], None
+        if self.row_tags is None:
+            return
+        if tag == "a" and not self.detail:
+            href = urljoin(SOURCES["topg"][1], attrs.get("href") or "").rstrip("/")
+            if DETAIL_URLS["topg"].fullmatch(href):
+                self.detail = href
+        if tag == "span" and "label-default" in classes:
+            self.label = []
+
+    def handle_data(self, data):
+        super().handle_data(data)
+        if self.label is not None:
+            self.label.append(data)
+        if self.structured is not None:
+            self.structured.append(data)
+
+    def handle_endtag(self, tag):
+        super().handle_endtag(tag)
+        if tag == "span" and self.label is not None:
+            label = "".join(self.label).strip()
+            if RATE.fullmatch(label):
+                self.row_tags.append(label)
+            self.label = None
+        if tag == "li" and self.row_tags is not None:
+            if self.detail and self.row_tags:
+                self.ranked_tags[self.detail] = " ".join(self.row_tags)
+            self.row_tags, self.label, self.detail = None, None, None
+        if tag == "script" and self.structured is not None:
+            raw, self.structured = "".join(self.structured), None
+            self.read_item_list(raw)
+
+    def read_item_list(self, raw):
+        try:
+            data = json.loads(raw)
+        except ValueError:
+            return
+        if not isinstance(data, dict) or data.get("@type") != "ItemList":
+            return
+        entries = data.get("itemListElement")
+        if not isinstance(entries, list):
+            return
+        for entry in entries:
+            if not isinstance(entry, dict) or not isinstance(entry.get("item"), dict):
+                continue
+            detail = entry.get("url")
+            site = entry["item"].get("url")
+            if not isinstance(detail, str) or not isinstance(site, str):
+                continue
+            detail = detail.rstrip("/")
+            try:
+                url = urlsplit(site)
+            except ValueError:
+                continue
+            if (DETAIL_URLS["topg"].fullmatch(detail) and url.scheme in {"http", "https"}
+                    and url.hostname and DOMAIN.fullmatch(url.hostname)):
+                self.ranked_domains[detail] = url.hostname.removeprefix("www.")
+
+    def records(self):
+        for detail, tags in self.ranked_tags.items():
+            domain = self.ranked_domains.get(detail)
+            if domain:
+                yield domain, tags, "", detail
+
 class TuServerCards(HTMLParser):
     def __init__(self):
         super().__init__()
@@ -136,20 +217,21 @@ def source_page(url, rules, parser=VisibleText):
     page.feed(read_url(url))
     return page
 
-def topg_pages(url, rules):
+def topg_records(url, rules):
     details = {}
     for index_url, limit in ((url, 8), ("https://topg.org/mu-private-servers/", 12)):
         try:
-            index = source_page(index_url, rules)
+            index = source_page(index_url, rules, TopGRanking)
         except (OSError, ValueError) as error:
             print(f"TopG ({index_url}): {error}")
             continue
         links = dict.fromkeys(urljoin(index_url, href) for href in index.links)
         matches = [link.rstrip("/") for link in links if DETAIL_URLS["topg"].fullmatch(link)]
         details.update(dict.fromkeys(matches[:limit]))
+        yield from index.records()
     for detail in details:
         try:
-            yield detail, source_page(detail, rules).lines()
+            yield from extract_topg([(detail, source_page(detail, rules).lines())])
         except (OSError, ValueError) as error:
             print(f"TopG ({detail}): {error}")
 
@@ -314,7 +396,7 @@ def build_catalog(previous, snapshots, day, verified_rates=None):
                          for key, value in SOURCES.items()}
     return result, sorted(set(projects) - before)
 
-PARSERS = {"mu-online-list": extract_list, "top-100": extract_top100, "topg": extract_topg,
+PARSERS = {"mu-online-list": extract_list, "top-100": extract_top100, "topg": iter,
            "tuservermu": iter}
 
 def make_index(catalog):
@@ -371,6 +453,7 @@ def run():
             previous = json.loads(read_url(args.anterior_url))
             if previous.get("version") != 1 or not isinstance(previous.get("proyectos"), list):
                 raise ValueError("formato inválido de la lista anterior")
+            previous["dominios"] = previous.get("dominios", {}) | base.get("dominios", {})
             existing = {item["id"] for item in previous["proyectos"]}
             previous["proyectos"].extend(item for item in base["proyectos"] if item["id"] not in existing)
         except HTTPError as error:
@@ -381,8 +464,13 @@ def run():
         try:
             if args.muestras:
                 if key == "topg":
-                    records = [(None, path.read_text(encoding="utf-8").splitlines())
-                               for path in sorted(args.muestras.glob("topg-*.txt"))]
+                    records = list(extract_topg(
+                        (None, path.read_text(encoding="utf-8").splitlines())
+                        for path in sorted(args.muestras.glob("topg-*.txt"))))
+                    for path in sorted(args.muestras.glob("topg-ranking*.html")):
+                        ranking = TopGRanking()
+                        ranking.feed(path.read_text(encoding="utf-8"))
+                        records.extend(ranking.records())
                 elif key == "tuservermu":
                     records = []
                     for path in sorted(args.muestras.glob("tuservermu*.html")):
@@ -394,7 +482,7 @@ def run():
             else:
                 rules = robots_for(url)
                 if key == "topg":
-                    records = list(topg_pages(url, rules))
+                    records = list(topg_records(url, rules))
                 elif key == "tuservermu":
                     records = list(tuservermu_pages(url, rules))
                 else:

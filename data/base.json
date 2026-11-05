@@ -1,6 +1,10 @@
 {
   "version": 1,
-  "dominios": {"rushmu.bg": "hard.rushmu.bg"},
+  "dominios": {
+    "rushmu.bg": "hard.rushmu.bg",
+    "infinitymu.net": "nombre:infinitymuseason3",
+    "mufavorite.com": "nombre:mufavorite"
+  },
   "alias": {
     "goblinmu": "goblinmu.com",
     "muexit": "muexit.net",
@@ -10,6 +14,10 @@
     "nombre:infinitymuseason3": {
       "opciones_exp": [9999999],
       "fuente": "https://www.infinitymu.net/about-infinitymu/"
+    },
+    "asteriamu.com": {
+      "opciones_exp": [99999],
+      "fuente": "https://asteriamu.com/info"
     }
   },
   "proyectos": [
